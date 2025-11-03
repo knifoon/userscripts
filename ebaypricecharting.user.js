@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PriceCharting Link
 // @namespace    http://knifoon.com
-// @version      1.11
+// @version      1.12
 // @description  Adds a link to pricecharting page if available
 // @author       knifoon
 // @match        https://www.ebay.com/itm/*
@@ -42,7 +42,7 @@
             .join(' ')
             console.log(filteredString);
 
-            const extract = filteredString.match(/(.*?)\s#?((?:\w*)\d+)/)
+            const extract = filteredString.match(/(.*?)\s#?0?((\w*)?\d+)/)
             if (extract){
                 let name = extract[1].split(' ').join('+')
                 let number = extract[2]
