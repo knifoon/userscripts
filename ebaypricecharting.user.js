@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PriceCharting Link
 // @namespace    http://knifoon.com
-// @version      1.13
+// @version      1.14
 // @description  Adds a link to pricecharting page if available
 // @author       knifoon
 // @match        https://www.ebay.com/itm/*
@@ -36,7 +36,7 @@
             item = item.toLowerCase().replace(/(bgs|psa|cgc|ags)(\s)?\d{1,2}(\.5)?/,'')
             item = item.replace('ultra rare','')
             item = item.replace('full art','')
-            const wordsToRemove = ["tcg","pokemon","card","pokémon","(nm)","(lp)","(mp)","mp","lp","nm","1999","kids","wb","first","movie","wotc","1st","bgs","cgc","psa",'xy','evolutions','2002','2022','2023','2024','2025','common','sv5a','sv','jp','holo'];
+            const wordsToRemove = ["tcg","pokemon","card","pokémon","(nm)","(lp)","(mp)","mp","lp","nm","1999","kids","wb","first","movie","wotc","1st","bgs","cgc","psa",'xy','evolutions','2002','2022','2023','2024','2025','common','sv5a','sv','jp','holo','mint','-'];
             const filteredString = item
             .split(' ')
             .filter(word => !wordsToRemove.includes(word.toLowerCase()))
