@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PriceCharting Link
 // @namespace    http://knifoon.com
-// @version      1
+// @version      1.1
 // @description  Adds a link to pricecharting page if available
 // @author       knifoon
 // @match        https://www.ebay.com/itm/*
@@ -36,6 +36,7 @@
         waitForElm('.x-item-title').then(title => {
             let item = title.querySelector('h1').innerText
             item = item.toLowerCase().replace(/(bgs|psa|cgc|ags)(\s)?\d{1,2}(\.5)?/,'')
+            item = item.replace('ultra rare','')
             const wordsToRemove = ["tcg","pokemon","card","pokémon","(nm)","(lp)","(mp)","mp","lp","nm","1999","kids","wb","first","movie","wotc","1st","bgs","cgc","psa",'xy','evolutions'];
             const filteredString = item
             .split(' ')
